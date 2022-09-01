@@ -31,9 +31,13 @@ getData()
       const countriesCurrencies = Object.keys(countries.currencies)
       console.log(countriesCurrencies);
       
-      countriesNames.forEach(writeExcelLine(countriesNames))
+      countriesNames.forEach(writeExcelLine1(countriesNames));
+      countriesCapitals.forEach(writeExcelLine2(countriesCapitals));
+      countriesArea.forEach(writeExcelLine3(countriesArea));
+      countriesCurrencies.forEach(writeExcelLine4(countriesCurrencies));
+      
 
-      writeExcel()
+      writeExcel();
 
       
       
@@ -111,10 +115,30 @@ wb.write('Countries.xlsx');
 }
 
 
-function writeExcelLine(Object) {
-  let i = 1;
-  wb.cell(i,3)
+function writeExcelLine1(Object) {
+   wb.cell(3,1)
   .string(Object)
   .style(style)
   i++;
+}
+
+function writeExcelLine2(Object) {
+  wb.cell(3,2)
+ .string(Object)
+ .style(style)
+ i++;
+}
+
+function writeExcelLine3(Object) {
+  wb.cell(3,3)
+ .string(Object)
+ .style(style)
+ i++;
+}
+
+function writeExcelLine4(Object) {
+  wb.cell(3,4)
+ .string(Object)
+ .style(style)
+ i++;
 }
